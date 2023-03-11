@@ -69,8 +69,13 @@ if streamlit.button('Get Fruit Load List'):
 # Allow the end user to add fruits?
 def insert_row_snowflake(new_fruit): 
   with my_cnx.cursor() as my_cur:
+
+# What needs to replace the question marks in line 74 below? :
 #        mycur.execute("INSERT into FRUIT_LOAD_LIST values ('" + ???? + "')")
+
+# This doesn't work - it yields "NameError: name 'mycur' is not defined":
         mycur.execute("INSERT into fruit_load_list values ('" + new_fruit() + "')")
+
         return "Thanks for adding " + new_fruit
     
 add_my_fruit = streamlit.text_input('What fruit would you like to add?','')
