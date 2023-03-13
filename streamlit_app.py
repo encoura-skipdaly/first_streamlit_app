@@ -74,7 +74,7 @@ def insert_row_snowflake(new_fruit):
 #        mycur.execute("INSERT into FRUIT_LOAD_LIST values ('" + ???? + "')")
 
 # This doesn't work - it yields "NameError: name 'mycur' is not defined":
-        mycur.execute("INSERT into fruit_load_list values (' + new_fruit + ')")
+        my_cur.execute("INSERT into fruit_load_list values ('" + new_fruit + "')")
 
         return "Thanks for adding " + new_fruit
     
